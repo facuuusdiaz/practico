@@ -1,0 +1,38 @@
+{% extends 'header.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2>Registro de Usuario</h2>
+        
+        <form method="POST" class="form-group">
+            {% csrf_token %}
+            
+            <!-- Campo de Nombre de Usuario -->
+            <div class="form-group">
+                <label for="id_username">Nombre de Usuario</label>
+                {{ form.username }}
+            </div>
+            
+            <!-- Campo de Email -->
+            <div class="form-group">
+                <label for="id_email">Correo Electrónico</label>
+                {{ form.email }}
+            </div>
+            
+            <!-- Campo de Contraseña -->
+            <div class="form-group">
+                <label for="id_password1">Contraseña</label>
+                {{ form.password1 }}
+            </div>
+            
+            <!-- Confirmar Contraseña -->
+            <div class="form-group">
+                <label for="id_password2">Confirmar Contraseña</label>
+                {{ form.password2 }}
+            </div>
+            
+            <!-- Botón para Crear Usuario -->
+            <button type="submit" class="btn btn-primary">Crear Usuario</button>
+        </form>
+    </div>
+{% endblock %}
